@@ -1,0 +1,4 @@
+/*  gnb 메뉴 조절 */
+.menu > li {
+  width: 160px;
+}
