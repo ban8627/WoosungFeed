@@ -26,7 +26,7 @@ a {
 a:hover {
   color: #333;
 }
-
+html, body {width:100%; height:100%;}
 html {
   font-size: 16px;
   overflow-x: hidden;
@@ -37,7 +37,7 @@ body {
   font-weight: 400;
   font-family: "Noto Sans KR", "돋움", dotum, sans-serif;
   color: #000;
-  line-height: 1.4;
+  word-break: keep-all;
 }
 
 /* 공통클래스 */
@@ -48,6 +48,7 @@ body {
   width: 100%;
   clear: both;
 }
+
 .inner {
   position: relative;
   display: block;
@@ -57,8 +58,8 @@ body {
 .wrap {
   position: relative;
   display: block;
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
 }
 
 /* header */
@@ -71,6 +72,7 @@ body {
   transform: translateY(0);
   transition: transform 1s;
 }
+
 .header .inner {
   position: relative;
   display: flex;
@@ -80,81 +82,371 @@ body {
   height: 80px;
   margin: 30px auto 0;
   border: 1px solid #fff;
-  background-color: gray;
+  overflow: hidden;
 }
+
 .header h1 {
   position: relative;
   display: block;
-  width:236px;
-  height:78px;
+  width: 236px;
+  height: 78px;
 }
+
 .header .logo {
   position: absolute;
-  left:50%;
-  top:50%;
-  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: block;
   width: 148px;
   height: 19px;
   background: url('../images/logo1.png') no-repeat center;
-  background-size: cover;
+  background-size: 148px 19px;
   text-indent: -9999px;
+}
+
+.header .logo.active {
+  background: url('../images/logo3.png') no-repeat center;
+}
+
+.gnb {
+  width: calc(100% - 259px - 236px);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+}
+
+.main-menu {
+  display: flex;
+  align-items: center;
+}
+
+.main-menu>li {
+  margin: 0 30px;
+}
+
+.main-menu>li>a {
+  font-size: 17px;
+  color: #fff;
+}
+
+.main-menu>li>a.active {
+  color: #222;
+}
+
+.drop-menu {
+  position: absolute;
+  display: block;
+  left: -1px;
+  top: 100%;
+  z-index: 1000;
+  text-align: center;
+  background: #fff;
+  border-top: 1px solid #697995;
+  width: calc(100% + 2px);
+  padding: 45px 239px 45px 239px;
+  box-shadow: 0 2px 3px rgb(0 0 0 / 10%);
+}
+
+.drop-menu .depth1 {
+  display: flex;
+  width: 100%;
+}
+
+.depth1>li {
+  width: calc(100% / 6);
+  height: inherit;
+  border-right: 1px solid #ddd;
+}
+
+.depth1>li:first-child {
+  border-left: 1px solid #ddd;
+}
+
+.depth1>li>a {
+  font-size: 19px;
+  color: #222;
+  font-weight: 500;
+}
+
+.depth2 {
+  margin-top: 20px;
+}
+
+.depth2>li {
+  margin-bottom: 5px;
+}
+
+.depth2>li>a {
+  font-size: 17px;
+  color: #555;
 }
 
 .quick-bt {
   position: relative;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  width:259px;
-  height:100%;
+  width: 259px;
+  height: 100%;
 }
+
 .quick-bt ul {
-  width:calc(100% - 78px);
+  width: calc(100% - 78px);
   display: flex;
+  width: 100%;
+  height: auto;
   align-items: center;
   justify-content: center;
 }
+
 .quick-bt ul li {
+  display: flex;
+  align-items: center;
+}
+
+.quick-bt ul li:first-child {
   position: relative;
   padding-right: 12px;
   margin-right: 10px;
 }
-.quick-bt ul li:last-child {
-  padding:0;
-  margin:0;
-}
+
 .quick-bt ul li:first-child::after {
   display: block;
   content: "";
   width: 1px;
   height: 10px;
-  background: rgba(255,255,255,0.7);
+  background: rgba(255, 255, 255, 0.7);
   position: absolute;
   right: 0;
-  top: 7px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .quick-bt ul li a {
+  position: relative;
   font-family: "Montserrat";
   font-size: 12px;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.9);
 }
+
+.quick-bt ul li a.active {
+  color: #222;
+}
+
 .site-map {
   display: block;
-  width:78px;
-  border-left:1px solid #fff;
+  border-left: 1px solid #fff;
 }
+
 .site-bt {
   position: relative;
   display: block;
-  width:100%;
-  height:100%;
+  width: 78px;
+  height: 78px;
   padding: 27px 25px;
 }
-.site-bt > span {
+
+.site-bt>span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  margin-bottom: 7px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.site-bt>span.active {
+  background-color: #222;
+}
+
+/* visual */
+.visual {
+  position: relative;
+  display: block;
+  height: 100vh;
+  overflow: hidden;
+}
+.visual-bg {
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  width:120%;
+  height:136%;
+  background: url('../images/visual1.jpg') no-repeat center;
+  background-size: cover;
+  z-index: 1;
+}
+.visual-text-wrap {
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width:90%;
+  height:auto;
+  line-height: 1.3;
+  text-align: center;
+  z-index: 10;
+}
+.visual-text-wrap::before {
+  display: block;
+  content: "";
+  width: 1px;
+  height: 60px;
+  background: rgba(255,255,255,0.5);
+  margin: 0 auto 30px;
+}
+.visual-text-wrap::after {
+  display: block;
+  content: "";
+  width: 1px;
+  height: 60px;
+  background: rgba(255,255,255,0.5);
+  margin: 40px auto 0;
+}
+.visual-text-wrap .sec-main-title {
+  font-family: "Cormorant Garamond";
+  font-size: 88px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.visual-text-wrap .sec-dec {
+  font-size: 20px;
+  color: rgba(255,255,255,0.8);
+  font-weight: 300;
+}
+
+/* sustainable */
+.sustain {
+  position: relative;
   display: block;
   width:100%;
-  height:3px;
-  margin-bottom:7px;
-  background-color: #fff;
+  height:auto;
+  padding: 200px 7.5% 150px;
+}
+.sustain-bg {
+  position: absolute;
+  right: 0;
+  top: 190px;
+  display: block;
+  width: 682px;
+  height: 367px;
+  background: url('../images/section1_bg1.png') no-repeat;
+  background-size: cover;
+}
+.sustain .sec-main-title {
+  font-family: "Cormorant Garamond";
+  font-size: 102px;
+  color: #6f917b;
+}
+.sustain .sec-dec {
+  padding: 0 0 0 70px;
+  font-size: 17px;
+  color: #666;
+  line-height: 180%;
+}
+.sustain .sec-dec span {
+  display: block;
+  padding: 50px 0 25px;
+  font-family: "Montserrat";
+  font-size: 21px;
+  color: #222;
+  font-weight: 500;
+}
+
+/* product */
+.product .sec-sub-title {
+  font-family: "Montserrat";
+  font-size: 20px;
+  font-weight: 500;
+  color: #000;
+  text-align: center;
+}
+.sw-product {
+  width:100%;
+  height:100%;
+  padding-top:50px;
+}
+.product-wrapper {
+  display: block;
+  width:100%;
+}
+.goods-t {
+  position: relative;
+  border:1px solid #000;
+  width:100%;
+  height:100%;
+}
+.goods-t-left {
+  float:left;
+  width:50%;
+  background-color: red;
+}
+.goods-t-left > div {
+  height: 910px;
+}
+.goods-right {
+  float:right;
+  width:50%;
+  height:910px;
+  display: flex;
+  flex-direction: column;
+}
+.goods-t-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: blue;
+}
+.goods-t-right > div {
+  width: calc((100% / 2) - 10%);
+  height: 580px;
+  background-color: green;
+}
+.product-content {
+  display: flex;
+  align-items: center;
+  width:100%;
+  height:100%;
+  padding:0 65px;
+}
+.product-title {
+  font-family: "Cormorant Garamond";
+  font-size: 42px;
+  color: #222;
+}
+.product-dec {
+  margin-top: 15px;
+  font-size: 17px;
+  color: #666;
+  line-height: 180%;
+}
+
+.goods-b {
+  display: flex;
+  justify-content: space-evenly;
+  width:100%;
+  margin:55px 0 250px;
+}
+.goods-b > div {
+  width:calc((100% / 3) - 4%);
+  height:552px;
+  background-color: blueviolet;
+}
+
+/* innovative */
+.innovative {
+  position: relative;
+  display: block;
+  height:100vh;
+  padding-bottom: 250px;
+}
+.inno-text-wrap {
+  padding: 130px 7.5% 230px;
+  background: #879a82;
 }
