@@ -26,7 +26,13 @@ a {
 a:hover {
   color: #333;
 }
-html, body {width:100%; height:100%;}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
 html {
   font-size: 16px;
   overflow-x: hidden;
@@ -269,54 +275,60 @@ body {
   height: 100vh;
   overflow: hidden;
 }
+
 .visual-bg {
   position: absolute;
-  left:50%;
-  top:50%;
+  left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
-  width:120%;
-  height:136%;
+  width: 120%;
+  height: 136%;
   background: url('../images/visual1.jpg') no-repeat center;
   background-size: cover;
   z-index: 1;
 }
+
 .visual-text-wrap {
   position: absolute;
-  left:50%;
-  top:50%;
+  left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
   display: block;
-  width:90%;
-  height:auto;
+  width: 90%;
+  height: auto;
   line-height: 1.3;
   text-align: center;
   z-index: 10;
 }
+
 .visual-text-wrap::before {
   display: block;
   content: "";
   width: 1px;
   height: 60px;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.5);
   margin: 0 auto 30px;
 }
+
 .visual-text-wrap::after {
   display: block;
   content: "";
   width: 1px;
   height: 60px;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.5);
   margin: 40px auto 0;
 }
+
 .visual-text-wrap .sec-main-title {
   font-family: "Cormorant Garamond";
   font-size: 88px;
   color: #fff;
   margin-bottom: 10px;
 }
+
 .visual-text-wrap .sec-dec {
   font-size: 20px;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 300;
 }
 
@@ -324,10 +336,11 @@ body {
 .sustain {
   position: relative;
   display: block;
-  width:100%;
-  height:auto;
+  width: 100%;
+  height: auto;
   padding: 200px 7.5% 150px;
 }
+
 .sustain-bg {
   position: absolute;
   right: 0;
@@ -338,17 +351,20 @@ body {
   background: url('../images/section1_bg1.png') no-repeat;
   background-size: cover;
 }
+
 .sustain .sec-main-title {
   font-family: "Cormorant Garamond";
   font-size: 102px;
   color: #6f917b;
 }
+
 .sustain .sec-dec {
   padding: 0 0 0 70px;
   font-size: 17px;
   color: #666;
   line-height: 180%;
 }
+
 .sustain .sec-dec span {
   display: block;
   padding: 50px 0 25px;
@@ -366,36 +382,43 @@ body {
   color: #000;
   text-align: center;
 }
+
 .sw-product {
-  width:100%;
-  height:100%;
-  padding-top:50px;
+  width: 100%;
+  height: 100%;
+  padding-top: 50px;
 }
+
 .product-wrapper {
   display: block;
-  width:100%;
+  width: 100%;
 }
+
 .goods-t {
   position: relative;
-  border:1px solid #000;
-  width:100%;
-  height:100%;
+  border: 1px solid #000;
+  width: 100%;
+  height: 100%;
 }
+
 .goods-t-left {
-  float:left;
-  width:50%;
+  float: left;
+  width: 50%;
   background-color: red;
 }
-.goods-t-left > div {
+
+.goods-t-left>div {
   height: 910px;
 }
+
 .goods-right {
-  float:right;
-  width:50%;
-  height:910px;
+  float: right;
+  width: 50%;
+  height: 910px;
   display: flex;
   flex-direction: column;
 }
+
 .goods-t-right {
   position: relative;
   display: flex;
@@ -403,23 +426,27 @@ body {
   justify-content: space-evenly;
   background-color: blue;
 }
-.goods-t-right > div {
+
+.goods-t-right>div {
   width: calc((100% / 2) - 10%);
   height: 580px;
   background-color: green;
 }
+
 .product-content {
   display: flex;
   align-items: center;
-  width:100%;
-  height:100%;
-  padding:0 65px;
+  width: 100%;
+  height: 100%;
+  padding: 0 65px;
 }
+
 .product-title {
   font-family: "Cormorant Garamond";
   font-size: 42px;
   color: #222;
 }
+
 .product-dec {
   margin-top: 15px;
   font-size: 17px;
@@ -430,12 +457,13 @@ body {
 .goods-b {
   display: flex;
   justify-content: space-evenly;
-  width:100%;
-  margin:55px 0 250px;
+  width: 100%;
+  margin: 55px 0 250px;
 }
-.goods-b > div {
-  width:calc((100% / 3) - 4%);
-  height:552px;
+
+.goods-b>div {
+  width: calc((100% / 3) - 4%);
+  height: 552px;
   background-color: blueviolet;
 }
 
@@ -443,10 +471,187 @@ body {
 .innovative {
   position: relative;
   display: block;
-  height:100vh;
   padding-bottom: 250px;
 }
+
+.innovative .bg-pic {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 32%;
+  width: 57%;
+  height: 910px;
+  background: url('../images/sec2_bg.jpg') no-repeat right;
+  transition: all 1s;
+  z-index: 0;
+
+}
+
 .inno-text-wrap {
   padding: 130px 7.5% 230px;
   background: #879a82;
+}
+
+.sec-sub-title {
+  position: relative;
+  font-family: "Montserrat";
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  z-index: 9;
+}
+
+.sec-main-title {
+  position: relative;
+  font-family: "Cormorant Garamond";
+  font-size: 230px;
+  color: #fff;
+  line-height: 85%;
+  z-index: 9;
+}
+
+.sec-dec {
+  margin-top: 120px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+  line-height: 180%;
+}
+
+.sec-dec>span {
+  display: block;
+  margin: 0 0 25px;
+  font-size: 19px;
+  color: #fff;
+}
+
+/* merit */
+.merit {
+  display: block;
+  width: 100vw;
+  padding: 180px 0;
+}
+
+.merit .sec-sub-title {
+  color: #000;
+}
+
+.merit>div {
+  margin-top: 70px;
+}
+
+.merit>div>ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.merit>div>ul>li {
+  position: relative;
+  margin: 0 3.5%;
+  text-align: center;
+}
+
+.merit>div>ul>li>span {
+  display: block;
+}
+
+.merit-icon {
+  width: 146px;
+  height: 146px;
+  margin: 80px auto 55px;
+}
+
+.merit-title {
+  margin-bottom: 20px;
+  font-size: 23px;
+  color: #222;
+  font-weight: 500;
+}
+
+.merit-dec {
+  font-size: 17px;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 300;
+  line-height: 180%;
+}
+
+/* news */
+.news {
+  overflow: hidden;
+  width: 100%;
+  padding: 140px 0 160px;
+  background: url('../images/sec4_bg.jpg') no-repeat center top;
+  background-attachment: fixed;
+  text-align: center;
+}
+
+.news .sec-main-title {
+  margin: 45px 0 70px;
+  font-size: 102px;
+  line-height: 100%;
+}
+
+.sw-news .swiper-slide > a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 380px;
+  padding: 50px 40px;
+  background: #fff;
+  text-align: left;
+  word-break: keep-all;
+}
+
+.news-cate {
+  font-family: "Montserrat";
+  font-size: 16px;
+  color: #222;
+  font-weight: 500;
+}
+
+.news-title {
+  margin: 20px 0;
+  font-size: 24px;
+  color: #222;
+  font-weight: 500;
+}
+
+.news-dec {
+  font-size: 17px;
+  color: #666;
+  font-weight: 300;
+  line-height: 180%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  overflow: hidden;
+}
+
+.news-bt {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border: 1px solid #777;
+  border-radius: 50%;
+}
+
+.news-bt>span {
+  width: 6px;
+  height: 6px;
+  border-right: 1px solid #777;
+  border-bottom: 1px solid #777;
+  transform: rotate(-45deg);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -3px 0 0 -4px;
+}
+
+.news-date {
+  font-size: 16px;
+  color: #666;
+  font-weight: 300;
 }
