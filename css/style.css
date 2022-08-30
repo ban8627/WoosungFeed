@@ -542,17 +542,46 @@ body {
 }
 
 .merit>div>ul {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  height:100%;
 }
-
+.merit>div>ul::before {
+  display: block;
+  content: "";
+  width: 0%;
+  height: 1px;
+  background: #7f7f7a;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition:width 0.3s;
+}
+.merit>div>ul:hover::before {
+  width:100%;
+}
 .merit>div>ul>li {
   position: relative;
   margin: 0 3.5%;
   text-align: center;
+  padding-top:15px;
 }
-
+.merit>div>ul>li::before {
+  display: block;
+  content: "";
+  box-sizing: border-box;
+  width: 18px;
+  height: 18px;
+  background: #333;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: -9px;
+  margin-left: -9px;
+}
 .merit>div>ul>li>span {
   display: block;
 }
@@ -592,7 +621,12 @@ body {
   font-size: 102px;
   line-height: 100%;
 }
-
+.sw-news {
+  margin: 0 0 0 7%;
+}
+.sw-news .swiper-slide {
+  width:520px;
+}
 .sw-news .swiper-slide > a {
   position: relative;
   display: block;
@@ -629,6 +663,15 @@ body {
   white-space: normal;
   overflow: hidden;
 }
+.news-bottom {
+  position: absolute;
+  left: 40px;
+  bottom: 50px;
+  width: calc(100% - 80px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .news-bt {
   position: relative;
@@ -636,8 +679,8 @@ body {
   height: 56px;
   border: 1px solid #777;
   border-radius: 50%;
+  background-color: #fff;
 }
-
 .news-bt>span {
   width: 6px;
   height: 6px;
@@ -654,4 +697,148 @@ body {
   font-size: 16px;
   color: #666;
   font-weight: 300;
+}
+
+
+/* ws-active */
+.ws-active {
+  display: flex;
+}
+.ws-active>div {
+  width:50%;
+  padding:7%;
+}
+.video-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 720px;
+  background: url('../images/sec5_bg1.jpg') no-repeat center;
+  text-align: center;
+}
+.ws-video .sec-sub-title{
+  margin-top:35px;
+  margin-bottom:30px;
+}
+.ws-active .sec-dec {
+  padding:0 35px;
+  padding-bottom:35px;
+  font-size: 17px;
+  color: #fff;
+  font-weight: 300;
+  line-height: 180%;
+  margin-top:0;
+}
+.ws-icon {
+  display: block;
+  margin-bottom:60px;
+}
+.video-bt {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 275px;
+  height: 64px;
+  margin: 0 auto;
+  border: 1px solid #fff;
+  border-radius: 32px;
+  transform-origin: center;
+  transition: all 0.4s;
+  background-color: transparent;
+}
+.video-bt span {
+  font-size: 16px;
+  color: #fff;
+  margin-right:100px;
+}
+.video-bt span:nth-child(2) {
+  display: block;
+  width: 19px;
+  height: 6px;
+  margin-right:0;
+  background: url('../images/btn_arr.png') no-repeat;
+}
+.contri {
+  background-color: #e4e6e4;
+  text-align: center;
+}
+.contri .sec-sub-title {
+  margin-bottom:30px;
+  color:#000;
+}
+.contri .sec-sub-title::before {
+  display: block;
+  content: "";
+  width: 1px;
+  height: 50px;
+  background: #111;
+  margin: 0 auto 55px;
+}
+.contri .sec-sub-title {
+  font-size: 17px;
+  color: #666;
+  font-weight: 300;
+  line-height: 180%;
+}
+.contri .ws-icon {
+  margin:35px 0 60px;
+}
+.contri .sec-dec {
+  color:#666;
+}
+
+
+/* recruit */
+.recruit {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 130px 0 100px;
+  text-align: center; 
+}
+.recruit-bg {
+  position: absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background: url('../images/sec6_bg.jpg') no-repeat center;
+  transform: scale(1.2);
+  transition: all 3s ease-out;
+}
+.recruit-bg:hover {
+  transform:scale(1)
+}
+.recruit .sec-main-title {
+  margin: 50px 0 30px;
+  font-size: 102px;
+  color: #fff;
+  line-height: 100%;
+}
+.recruit .sec-dec {
+  margin-bottom: 45px;
+  font-size: 17px;
+  color: #fff;
+  font-weight: 300;
+}
+.join-bt {
+  overflow: hidden;
+  display: block;
+  position: relative;
+  width: 275px;
+  height: 64px;
+  margin: 0 auto;
+  border: 1px solid #fff;
+  border-radius: 32px;
+  transform-origin: center;
+  transition: all 0.4s;
+  background-color: transparent;
+}
+.join-bt span {
+  color:#fff;
 }
