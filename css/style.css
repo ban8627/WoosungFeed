@@ -828,7 +828,9 @@ body {
 }
 .join-bt {
   overflow: hidden;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   width: 275px;
   height: 64px;
@@ -840,5 +842,113 @@ body {
   background-color: transparent;
 }
 .join-bt span {
-  color:#fff;
+  font-size: 16px;
+  color: #fff;
+  margin-right:100px;
+}
+.join-bt span:nth-child(2) {
+  display: block;
+  width: 19px;
+  height: 6px;
+  margin-right:0;
+  background: url('../images/btn_arr.png') no-repeat;
+}
+
+
+/* footer */
+.footer {
+  position: relative;
+  display: block;
+}
+.f-top {
+  display: flex;
+  padding: 40px 5% 35px;
+  border-bottom: 1px solid #b0b0b0;
+}
+.f-top .logo {
+  position: relative;
+  display: block;
+  width: 220px;
+  background: url('../images/foot_logo.png') no-repeat;
+  background-size: 161px 21px;
+  background-position:0 5px;
+  text-indent: -9999px;
+}
+.f-top .f-txt {
+  position: relative;
+  width:calc(100% - 220px);
+}
+.f-txt ul {
+  display: flex;
+  width:280px;
+}
+.f-txt ul li {
+  position: relative;
+  padding-right:12px;
+  margin-right:10px;
+}
+.f-txt ul  li:first-child::before {
+  display: block;
+  content: "";
+  width: 1px;
+  height: 12px;
+  background: #777;
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+.f-txt ul li a {
+  font-size: 17px;
+  color: #444;
+  line-height: 180%;
+}
+.f-txt address {
+  font-size: 16px;
+  color: rgba(0,0,0,0.8);
+  line-height: 180%;
+}
+.f-txt .family-site {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width:250px;
+  height:100%;
+  border:1px solid #000;
+}
+.family-site > a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 250px;
+  height: 56px;
+  padding: 0 30px;
+  border: 1px solid #bbb;
+  border-radius: 30px;
+  font-size: 17px;
+  color: rgba(0,0,0,0.6);
+}
+.family-site > a::after {
+  display: block;
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid #444;
+  border-bottom: 2px solid #444;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin: -4px 30px 0 0;
+}
+.family-site > ul {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 250px;
+  padding: 15px 0;
+  margin-top: 5px;
+  border: 1px solid #bbb;
+  border-radius: 30px;
+  background: #dcdcdc;
 }
