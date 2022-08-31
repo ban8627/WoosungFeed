@@ -89,6 +89,7 @@ body {
   margin: 30px auto 0;
   border: 1px solid #fff;
   overflow: hidden;
+  background-color: pink;
 }
 
 .header h1 {
@@ -383,88 +384,130 @@ body {
   text-align: center;
 }
 
-.sw-product {
-  width: 100%;
-  height: 100%;
-  padding-top: 50px;
-}
-
-.product-wrapper {
+.product-wrap {
+  width:100%;
   display: block;
-  width: 100%;
+  margin-top:50px;
 }
-
-.goods-t {
-  position: relative;
-  border: 1px solid #000;
-  width: 100%;
-  height: 100%;
-}
-
-.goods-t-left {
-  float: left;
-  width: 50%;
-  background-color: red;
-}
-
-.goods-t-left>div {
-  height: 910px;
-}
-
-.goods-right {
-  float: right;
-  width: 50%;
-  height: 910px;
+.product-top {
   display: flex;
+}
+.product-top > div {
+  position: relative;
+  width:50%;
+  height:910px;
+}
+.pt-img-01 {
+  background-color: #000;
+}
+.pt-img-01-bg {
+  width:100%;
+  height:100%;
+  background: url('../images/prd_img1.jpg') no-repeat;
+  background-size: cover;
+}
+.pt-img-wrap {
+  background-color: yellow;
+}
+.product-txt-area {
+  position: absolute;
+  left:40px;
+  top:40px;
+}
+.product-txt-area > span {
+  display: block;
+  color:#fff;
+  font-family: "Montserrat";
+  font-size: 18px;
+}
+.product-cate-en {
+  font-weight: 500;
+}
+.product-txt-area .product-cate-kr {
+  font-family: "Noto Sans KR","돋움",dotum,sans-serif;
+  font-size: 25px;
+  font-weight: normal;
+}
+.product-more {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
+  left: 50%;
+  top: 50%;
+  transform: scale(1) translate(-50%,-50%);
+  width: 94px;
+  height: 94px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 50%;
+  font-family: "Montserrat";
+  font-size: 11px;
+  color: #fff;
+  text-align: center;
+  transform-origin: center center;
+  opacity: 0;
+  transition: all 0.4s;
 }
-
-.goods-t-right {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  background-color: blue;
-}
-
-.goods-t-right>div {
-  width: calc((100% / 2) - 10%);
-  height: 580px;
-  background-color: green;
-}
-
-.product-content {
-  display: flex;
-  align-items: center;
+.product-more::before {
+  display: block;
+  content: "";
   width: 100%;
   height: 100%;
-  padding: 0 65px;
+  background: rgba(0,0,0,0.2);
+  opacity: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: -1;
+  transform-origin: center;
+  transform: translate(-50%,-50%);
+  animation: circleani 0.4s infinite alternate;
 }
 
-.product-title {
-  font-family: "Cormorant Garamond";
-  font-size: 42px;
-  color: #222;
+@keyframes circleani{
+	0%{width:94px;height:94px;opacity:0;}
+	100%{width:114px;height:114px;opacity:1;}
 }
-
-.product-dec {
-  margin-top: 15px;
-  font-size: 17px;
-  color: #666;
-  line-height: 180%;
-}
-
-.goods-b {
-  display: flex;
-  justify-content: space-evenly;
+.prt::after {
+  display: block;
+  content: "";
   width: 100%;
-  margin: 55px 0 250px;
+  height: 100%;
+  box-sizing: border-box;
+  border: 10px solid #6f917b;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity:0;
+  transform: scale(1.1);
+  transition: all 0.8s;
 }
-
-.goods-b>div {
-  width: calc((100% / 3) - 4%);
-  height: 552px;
-  background-color: blueviolet;
+.prt:hover::after {
+  transform: scale(1.0);
+  opacity:1;
+}
+.prt:hover .product-more {
+  opacity:1;
+}
+.prt:hover .product-more::before {
+  opacity:1;
+}
+.product-more > span {
+  display: block;
+}
+.more-txt {
+  font-family: "Montserrat";
+  font-size: 11px;
+  color: #fff;
+  text-align: center;
+  margin-bottom:9px;
+}
+.more-icon {
+  width:18px;
+  height:5px;
+  background: url('../images/btn_more_arr.png') no-repeat center;
 }
 
 /* innovative */
@@ -859,6 +902,7 @@ body {
 .footer {
   position: relative;
   display: block;
+  background: #dcdcdc;
 }
 .f-top {
   display: flex;
@@ -907,13 +951,11 @@ body {
   color: rgba(0,0,0,0.8);
   line-height: 180%;
 }
-.f-txt .family-site {
+.family-site {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 5%;
+  top: 40px;
   width:250px;
-  height:100%;
-  border:1px solid #000;
 }
 .family-site > a {
   position: relative;
@@ -944,11 +986,25 @@ body {
   display: block;
   position: absolute;
   left: 0;
-  top: 100%;
+  top: 57px;
   width: 250px;
   padding: 15px 0;
   margin-top: 5px;
   border: 1px solid #bbb;
   border-radius: 30px;
   background: #dcdcdc;
+}
+.family-site > ul > li {
+  position: relative;
+}
+.family-site > ul > li > a {
+  display: block;
+  padding: 4px 30px;
+  font-size: 16px;
+  color: rgba(0,0,0,0.5);
+}
+.copy {
+  padding: 25px 0 25px calc(220px + 5%);
+  font-size: 15px;
+  color: rgba(0,0,0,0.7);
 }
