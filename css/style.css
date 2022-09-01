@@ -81,17 +81,20 @@ body {
 }
 
 .header .inner {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 96%;
-  height: 80px;
   margin: 30px auto 0;
   border: 1px solid #fff;
 }
 .header .inner.active{
   background-color: #fff;
+}
+.header .main {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:100%;
+  height:80px;
 }
 .header h1 {
   position: relative;
@@ -103,7 +106,7 @@ body {
 .header .logo {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 40px;
   transform: translate(-50%, -50%);
   display: block;
   width: 148px;
@@ -120,7 +123,7 @@ body {
 
 .gnb {
   width: calc(100% - 259px - 236px);
-  height: 100%;
+  height:80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -142,11 +145,11 @@ body {
   font-size: 17px;
   color: #fff;
 }
-.gnb:hover {
+.gnb.active {
   border-left:1px solid #000;
   border-right:1px solid #000;
 }
-.gnb:hover .main-menu > li > a {
+.gnb.active .main-menu > li > a {
   color:#222;
 }
 .drop-menu {
@@ -166,11 +169,12 @@ body {
 .drop-menu .depth1 {
   display: flex;
   width: 100%;
+  height:100%;
 }
 
 .depth1>li {
   width: calc(100% / 6);
-  height: inherit;
+  height: 100%;
   border-right: 1px solid #ddd;
 }
 
@@ -186,20 +190,19 @@ body {
 
 .depth2 {
   position: relative;
-  display: flex;
-  flex-direction: column;
   margin-top: 20px;
 }
 
 .depth2>li {
   position: relative;
   display: block;
+  margin-bottom:5px;
 }
 
 .depth2>li>a {
   display: block;
-  margin-bottom: 5px;
   font-size: 17px;
+  padding:3px;
   color: #555;
 }
 
@@ -359,28 +362,31 @@ body {
 .sustain-bg {
   position: absolute;
   right: 0;
-  top: 190px;
+  top: 50px;
   display: block;
   width: 682px;
   height: 367px;
   background: url('../images/section1_bg1.png') no-repeat;
   background-size: cover;
+  transition:all .5s;
 }
-
+.sustain-bg.active {
+  top:190px;
+}
 .sustain .sec-main-title {
   font-family: "Cormorant Garamond";
   font-size: 102px;
   color: #6f917b;
 }
 
-.sustain .sec-dec {
+.sustain  .sus-sec-dec {
   padding: 0 0 0 70px;
   font-size: 17px;
   color: #666;
   line-height: 180%;
 }
 
-.sustain .sec-dec span {
+.sustain .sus-sec-dec span {
   display: block;
   padding: 50px 0 25px;
   font-family: "Montserrat";

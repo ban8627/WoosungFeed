@@ -1,24 +1,31 @@
 $(document).ready(function () {
   let gnb = $('.gnb');
-  let hInner = $('.header > .inner');
-  let logo = $('.logo');
-  let quickBt = $('.quick-bt');
-  let siteMap = $('.site-map');
+  let act = $('.act')
   let subMenu = $('.drop-menu');
+  let dropHideTimer;
+
 
   gnb.mouseenter(() => {
-    logo.addClass('active');
-    hInner.addClass('active');
-    quickBt.addClass('active');
-    siteMap.addClass('active');
+    clearTimeout(dropHideTimer);
+    act.addClass('active');
     subMenu.stop().slideDown();
+
   });
   gnb.mouseleave(() => {
-    logo.removeClass('active');
-    hInner.removeClass('active');
-    quickBt.removeClass('active');
-    siteMap.removeClass('active');
-    subMenu.stop().slideUp();
+    act.removeClass('active');
+    dropHideTimer = setTimeout( () => {
+      subMenu.css('display','none')
+    });
+  });
+  subMenu.mouseenter(()=>{
+    clearTimeout(dropHideTimer);
+    act.addClass('active');
+  })
+  subMenu.mouseleave(()=>{
+    dropHideTimer = setTimeout( () => {
+      subMenu.css('display','none')
+    });
+    act.removeClass('active');
   })
 
   // family-site
@@ -32,6 +39,7 @@ $(document).ready(function () {
 
 
 window.onload = function () {
+  AOS.init();
   let swNews = new Swiper('.sw-news', {
   spaceBetween: 50,
   slidesPerView: "auto",
