@@ -40,6 +40,7 @@ $(document).ready(function () {
 
 window.onload = function () {
   AOS.init();
+  // news slide
   let swNews = new Swiper('.sw-news', {
   spaceBetween: 50,
   slidesPerView: "auto",
@@ -54,14 +55,15 @@ window.onload = function () {
     disableOnInteraction: true,
   },
   });
-  
+  // contri slide
   let swContri = new Swiper('.sw-contri', {
     slidesPerView: 1,
     loop: true,
     speed: 1000,
     autoplay: {
       delay: 1000,
-      disableOnInteraction:false
+      disableOnInteraction: false
     }
-  })
+  });
+
 };
