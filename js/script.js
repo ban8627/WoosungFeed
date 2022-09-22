@@ -42,6 +42,10 @@ $(document).ready(function () {
   $(".innovative").waypoint(function () {
     $(".innovative .bg-pic").toggleClass("active");
   });
+  // innovative bg
+  $(".merit").waypoint(function () {
+    $(".merit > div").toggleClass("active");
+  });
 
   // news slide
   let swNews = new Swiper(".sw-news", {
@@ -87,13 +91,6 @@ $(document).ready(function () {
     speed: 1000,
     autoplay: {
       delay: 1000,
-<<<<<<< HEAD
-      disableOnInteraction: false
-    }
-  });
-
-};
-=======
       disableOnInteraction: false,
     },
   });
@@ -106,5 +103,15 @@ $(document).ready(function () {
 
 window.onload = function () {
   AOS.init();
+
+  $(window).bind("wheel", function (event) {
+    let temp = document.getElementById("header");
+    if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+      temp.style.top = 0;
+      gnb.classList += "active";
+    } else {
+      temp.style.top = "-100%";
+      gnb.classList.remove = "active";
+    }
+  });
 };
->>>>>>> 9ee5b2a3a391c9e9d7db026a9bd938a4f3788ae6

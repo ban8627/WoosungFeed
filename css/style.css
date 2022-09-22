@@ -726,6 +726,7 @@ body {
 }
 
 .merit > div {
+  position: relative;
   margin-top: 70px;
 }
 
@@ -737,7 +738,7 @@ body {
   height: 100%;
 }
 
-.merit > div > ul::before {
+.merit > div::before {
   display: block;
   content: "";
   width: 0%;
@@ -749,7 +750,7 @@ body {
   transition: width 0.3s;
 }
 
-.merit > div > ul:hover::before {
+.merit > div.active::before {
   width: 100%;
 }
 
