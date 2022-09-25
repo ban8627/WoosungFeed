@@ -84,6 +84,7 @@ body {
   width: 96%;
   margin: 30px auto 0;
   border: 1px solid #fff;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.5);
 }
 
 .header .inner.active {
