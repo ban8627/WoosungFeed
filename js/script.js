@@ -77,7 +77,7 @@ $(document).ready(function () {
   $(".innovative").waypoint(function () {
     $(".innovative .bg-pic").toggleClass("active");
   });
-  // innovative bg
+  // merit
   $(".merit").waypoint(function () {
     $(".merit > div").toggleClass("active");
   });
