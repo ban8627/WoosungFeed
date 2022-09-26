@@ -25,10 +25,11 @@ $(document).ready(function () {
   subMenu.mouseleave(() => {
     dropHideTimer = setTimeout(() => {
       subMenu.css("display", "none");
+      if ($("html").innerHeight < "300px") {
+        act.removeClass("active");
+      }
     });
-    act.removeClass("active");
   });
-
   $(() => {
     $("html,body").on("mousewheel DOMMouseScroll", (e) => {
       e.preventDefault();
